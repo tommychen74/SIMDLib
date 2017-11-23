@@ -1,10 +1,20 @@
 #ifndef _SIMD_ARCH
 #define _SIMA_ARCH
 
-#define _AVX_ARCH
+//#define _AVX_ARCH
+//#define _AVX512_ARCH
+#define _NEON_ARCH
 
 #ifdef _AVX_ARCH
 #include "VU32_avx.h"
+#endif
+
+#ifdef _AVX512_ARCH
+#include "VU32_avx512.h"
+#endif
+
+#ifdef _NEON_ARCH
+#include "VU32_neon.h"
 #endif
 
 //Aligned Malloc and Free
