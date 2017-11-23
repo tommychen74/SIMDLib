@@ -2,7 +2,8 @@
 #define _VU32_AVX_H_
 
 #include <immintrin.h>
-
+#include <stdlib.h>
+#include <stdio.h>
 typedef __m256i _VU32;
 #define _VU32_SIZE 8
 #define _VU32_ALGSIZE 32
@@ -59,12 +60,13 @@ typedef __m256i _VU32;
 #define _VU32_EQ(__a,__b)			_mm256_testz_si256((__a),(__b))
 
 //Load and Store
-#define _VU32_LOAD(aAddr)			_mm256_load_si256((const __m256i *)(aAddr))
-#define _VU32_STORE(aAddr, __b)		_mm256_store_si256((__m256i *)(aAddr), (__b))
+#define _VU32_LOAD(aAddr)			_mm256_load_si256((aAddr))
+#define _VU32_STORE(aAddr, __b)		_mm256_store_si256((aAddr), (__b))
 
-#define _VU32_PACKLOAD(aAddr)		_mm256_loadu_si256((const __m256i *)(aAddr))
+#define _VU32_PACKLOAD(aAddr)		_mm256_loadu_si256((aAddr))
 #define _VU32_PACKSTORE(aAddr, __b)	_mm256_storeu_si256((aAddr), (__b))
 
 #define _U32_LZCNT(__a)				_lzcnt_u32((__a))
+
 
 #endif
