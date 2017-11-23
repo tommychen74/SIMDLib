@@ -66,14 +66,5 @@ typedef __m256i _VU32;
 #define _VU32_PACKSTORE(aAddr, __b)	_mm256_storeu_si256((aAddr), (__b))
 
 #define _U32_LZCNT(__a)				_lzcnt_u32((__a))
-/*
-void view_VU32(_VU32 *p){
-	unsigned int *q = (unsigned int *)p;
-	for (int i = 7; i >= 0; i--)
-		printf("%d\t", q[i]);
-	printf("\n");
-}
 
-
-*/
 #endif
