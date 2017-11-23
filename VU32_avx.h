@@ -4,10 +4,6 @@
 #include <immintrin.h>
 
 typedef __m256i _VU32;
-#define _VU32_SIZE 8
-#define _VU32_ALGSIZE 32
-#define _VU32_LOG_ALGSIZE 5
-
 
 //Initialize a vector
 #define _VU32_SET(_a,_b,_c,_d,_e,_f,_g,_h)	_mm256_set_epi32((_a),(_b),(_c),(_d),(_e),(_f),(_g),(_h))

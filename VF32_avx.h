@@ -4,9 +4,6 @@
 #include <immintrin.h>
 
 typedef __m256 _VF32;
-#define _VF32_SIZE 8
-#define _VF32_ALGSIZE 32
-#define _VF32_LOG_ALGSIZE 5
 
 //Initialize a vector
 #define _VF32_SET(_a,_b,_c,_d,_e,_f,_g,_h)	_mm256_set_ps((_a),(_b),(_c),(_d),(_e),(_f),(_g),(_h))

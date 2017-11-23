@@ -1,19 +1,37 @@
 #ifndef _SIMD_ARCH
 #define _SIMA_ARCH
 
+//USER CHANGE ARCHITECURE, HERE!
 //#define _AVX_ARCH
 //#define _AVX512_ARCH
 #define _NEON_ARCH
 
 #ifdef _AVX_ARCH
+#define _VU32_SIZE 8
+#define _VU32_ALGSIZE 32
+#define _VU32_LOG_ALGSIZE 5
+
+#define _VF32_SIZE 8
+#define _VF32_ALGSIZE 32
+#define _VF32_LOG_ALGSIZE 5
+
 #include "VU32_avx.h"
+#include "VF32_avx.h"
 #endif
 
 #ifdef _AVX512_ARCH
+#define _VU32_SIZE 16
+#define _VU32_ALGSIZE 64
+#define _VU32_LOG_ALGSIZE 6
+
 #include "VU32_avx512.h"
 #endif
 
 #ifdef _NEON_ARCH
+#define _VU32_SIZE 4
+#define _VU32_ALGSIZE 32
+#define _VU32_LOG_ALGSIZE 4
+
 #include "VU32_neon.h"
 #endif
 
@@ -22,11 +40,11 @@
 #define _VU32_ALIGNED_MALLOC(size)  (_VU32 *)_aligned_malloc(size,_VU32_ALGSIZE)     
 #define _VU32_ALIGNED_FREE(p)   	_aligned_free(p)
 
-#elif defined(__GNUC_)_
+#elif defined(__GNUC_)_		//gcc
 #define _VU32_ALIGNED_MALLOC(size)  (_VU32 *)memalign(_VU32_ALGSIZE,size)     
 #define _VU32_ALIGNED_FREE(p)   	free(p)
 
-#elif defined(__ICC) || defined(__INTEL_COMPILER)
+#elif defined(__ICC) || defined(__INTEL_COMPILER)	//icc
 #define _VU32_ALIGNED_MALLOC(size)  (_VU32 *)_mm_malloc(size,_VU32_ALGSIZE)     
 #define _VU32_ALIGNED_FREE(p)   	_mm_free(p)
 

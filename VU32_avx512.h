@@ -4,10 +4,6 @@
 #include <immintrin.h>
 
 typedef __m512i _VU32;
-#define _VU32_SIZE 16
-#define _VU32_ALGSIZE 64
-#define _VU32_LOG_ALGSIZE 6
-
 
 //Initialize a vector
 #define _VU32_SET(_a,_b,_c,_d,_e,_f,_g,_h,_a1,_b1,_c1,_d1,_e1,_f1,_g1,_h1)	_mm512_set_epi32((_a),(_b),(_c),(_d),(_e),(_f),(_g),(_h),(_a1),(_b1),(_c1),(_d1),(_e1),(_f1),(_g1),(_h1))

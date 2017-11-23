@@ -7,10 +7,6 @@
 typedef int32x4_t _V32;
 typedef uint32x4_t _VU32;
 
-#define _VU32_SIZE 4
-#define _VU32_ALGSIZE 32
-#define _VU32_LOG_ALGSIZE 4
-
 //Initialize a vector
 #define _VU32_SET(_a,_b,_c,_d)		({uint32x4_t e; uint32_t *st = (uint32_t *)&e; st[0] = _a; st[1] = _b; st[2] = _c; st[3] = _d; e;})
 #define _VU32_SET1(a)				vdupq_n_u32((a))
