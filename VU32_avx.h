@@ -2,8 +2,7 @@
 #define _VU32_AVX_H_
 
 #include <immintrin.h>
-#include <stdlib.h>
-#include <stdio.h>
+
 typedef __m256i _VU32;
 #define _VU32_SIZE 8
 #define _VU32_ALGSIZE 32
