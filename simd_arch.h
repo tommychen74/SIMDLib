@@ -2,9 +2,23 @@
 #define _SIMA_ARCH
 
 //USER CHANGE ARCHITECURE, HERE!
-#define _AVX_ARCH
+#define _SSE_ARCH
+//#define _AVX_ARCH
 //#define _AVX512_ARCH
 //#define _NEON_ARCH
+
+#ifdef _SSE_ARCH
+#define _VU32_SIZE 4
+#define _VU32_ALGSIZE 16
+#define _VU32_LOG_ALGSIZE 4
+
+#define _VF32_SIZE 4
+#define _VF32_ALGSIZE 16
+#define _VF32_LOG_ALGSIZE 4
+
+#include "VU32_sse.h"
+#include "VF32_sse.h"
+#endif
 
 #ifdef _AVX_ARCH
 #define _VU32_SIZE 8
