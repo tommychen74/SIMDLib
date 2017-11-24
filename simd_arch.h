@@ -1,6 +1,5 @@
 #ifndef _SIMD_ARCH
 #define _SIMA_ARCH
-
 //USER CHANGE ARCHITECURE, HERE!
 #define _SSE_ARCH
 //#define _AVX_ARCH
@@ -51,15 +50,16 @@
 
 //Aligned Malloc and Free
 #if defined(_MSC_VER)  		//Microsoft Visual C
-#define _VU32_ALIGNED_MALLOC(size)  (_VU32 *)_aligned_malloc(size,_VU32_ALGSIZE)     
+#define _VU32_ALIGNED_MALLOC(size)  _aligned_malloc(size,_VU32_ALGSIZE)     
 #define _VU32_ALIGNED_FREE(p)   	_aligned_free(p)
 
-#elif defined(__GNUC_)_		//gcc
-#define _VU32_ALIGNED_MALLOC(size)  (_VU32 *)memalign(_VU32_ALGSIZE,size)     
+#elif defined(__GNUC__)    	//gcc
+#include <malloc.h>
+#define _VU32_ALIGNED_MALLOC(size)  memalign(_VU32_ALGSIZE,size)     
 #define _VU32_ALIGNED_FREE(p)   	free(p)
 
 #elif defined(__ICC) || defined(__INTEL_COMPILER)	//icc
-#define _VU32_ALIGNED_MALLOC(size)  (_VU32 *)_mm_malloc(size,_VU32_ALGSIZE)     
+#define _VU32_ALIGNED_MALLOC(size)  _mm_malloc(size,_VU32_ALGSIZE)     
 #define _VU32_ALIGNED_FREE(p)   	_mm_free(p)
 
 #endif

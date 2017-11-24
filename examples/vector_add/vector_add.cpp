@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "simd_arch.h"
 
 //dest,a,b are aligned memory
