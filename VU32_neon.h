@@ -12,7 +12,7 @@ typedef uint32x4_t _VU32;
 #define _VU32_SET1(a)				vdupq_n_u32((a))
 #define _VU32_ZERO()				vdupq_n_u32((0))
 #define _VU32_MOVE(__a) 			(__a)
-#define _V32_SET1(a) 				vdupq_n_s32((a))
+
 //Bitwise Operations
 #define _VU32_NOT(__a)				vmvnq_u32((__a))
 #define _VU32_OR(__a, __b)			vorrq_u32((__a), (__b))
