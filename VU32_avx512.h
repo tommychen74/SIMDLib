@@ -8,7 +8,7 @@ typedef __m512i _VU32;
 //Initialize a vector
 #define _VU32_SET(_a,_b,_c,_d,_e,_f,_g,_h,_a1,_b1,_c1,_d1,_e1,_f1,_g1,_h1)	_mm512_set_epi32((_a),(_b),(_c),(_d),(_e),(_f),(_g),(_h),(_a1),(_b1),(_c1),(_d1),(_e1),(_f1),(_g1),(_h1))
 #define _VU32_SET1(a)				_mm512_set1_epi32((a))
-#define _VU32_ZEOR()				_mm512_setzero_si256()
+#define _VU32_ZERO()				_mm512_setzero_si256()
 #define _VU32_MOVE(__a) 			(__a)
 
 //Bitwise Operations

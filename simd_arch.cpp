@@ -13,3 +13,9 @@ void viewH_VU32(_VU32 *p){
 		printf("%0x\t", q[i]);
 	printf("\n");
 }
+void view_VF32(_VF32 *p){
+	unsigned int *q = (unsigned int *)p;
+	for (int i = _VU32_SIZE - 1; i >= 0; i--)
+		printf("%f\t", q[i]);
+	printf("\n");
+}

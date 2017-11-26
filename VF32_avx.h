@@ -8,7 +8,7 @@ typedef __m256 _VF32;
 //Initialize a vector
 #define _VF32_SET(_a,_b,_c,_d,_e,_f,_g,_h)	_mm256_set_ps((_a),(_b),(_c),(_d),(_e),(_f),(_g),(_h))
 #define _VF32_SET1(a)				_mm256_set1_ps((a))
-#define _VF32_ZEOR()				_mm256_setzero_ps()
+#define _VF32_ZERO()				_mm256_setzero_ps()
 #define _VF32_MOVE(__a) 			(__a)
 
 //Arithmetic Operations

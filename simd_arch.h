@@ -66,4 +66,5 @@
 
 void view_VU32(_VU32 *p);
 void viewH_VU32(_VU32 *p);
+void view_VF32(_VF32 *p);
 #endif

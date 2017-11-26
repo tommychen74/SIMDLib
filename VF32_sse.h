@@ -8,7 +8,7 @@ typedef __m128 _VF32;
 //Initialize a vector
 #define _VF32_SET(_a,_b,_c,_d)	_mm_set_ps((_a),(_b),(_c),(_d))
 #define _VF32_SET1(a)				_mm_set1_ps((a))
-#define _VF32_ZEOR()				_mm_setzero_ps()
+#define _VF32_ZERO()				_mm_setzero_ps()
 #define _VF32_MOVE(__a) 			(__a)
 
 //Arithmetic Operations

@@ -8,7 +8,7 @@ typedef __m256i _VU32;
 //Initialize a vector
 #define _VU32_SET(_a,_b,_c,_d,_e,_f,_g,_h)	_mm256_set_epi32((_a),(_b),(_c),(_d),(_e),(_f),(_g),(_h))
 #define _VU32_SET1(a)				_mm256_set1_epi32((a))
-#define _VU32_ZEOR()				_mm256_setzero_si256()
+#define _VU32_ZERO()				_mm256_setzero_si256()
 #define _VU32_MOVE(__a) 			(__a)
 
 //Bitwise Operations
