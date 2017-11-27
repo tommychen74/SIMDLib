@@ -6,6 +6,9 @@
 //#define _AVX512_ARCH
 //#define _NEON_ARCH
 
+#define _x86_PERFORMANCE
+#define _ARM_PERFORMANCE
+
 #ifdef _SSE_ARCH
 #define _VU32_SIZE 4
 #define _VU32_ALGSIZE 16
@@ -50,13 +53,10 @@
 
 //Aligned Malloc and Free
 #if defined(_MSC_VER)  		//Microsoft Visual C
-#define _VU32_ALIGNED_MALLOC(size)  _aligned_malloc(size,_VU32_ALGSIZE)     
-#define _VU32_ALIGNED_FREE(p)   	_aligned_free(p)
+#include "mvs_api.h"
 
 #elif defined(__GNUC__)    	//gcc
-#include <malloc.h>
-#define _VU32_ALIGNED_MALLOC(size)  memalign(_VU32_ALGSIZE,size)     
-#define _VU32_ALIGNED_FREE(p)   	free(p)
+#include "gcc_api.h"
 
 #elif defined(__ICC) || defined(__INTEL_COMPILER)	//icc
 #define _VU32_ALIGNED_MALLOC(size)  _mm_malloc(size,_VU32_ALGSIZE)     
