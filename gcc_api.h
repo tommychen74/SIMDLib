@@ -7,4 +7,6 @@
 long long int get_cycle();
 long long int get_freq();
 
+
+
 #endif
