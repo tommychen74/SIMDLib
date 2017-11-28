@@ -1,5 +1,5 @@
-#ifndef _VU32_AVX512_H_
-#define _VU32_AVX512_H_
+#ifndef _VF32_AVX512_H_
+#define _VF32_AVX512_H_
 
 #include <immintrin.h>
 

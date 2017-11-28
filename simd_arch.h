@@ -2,8 +2,9 @@
 #define _SIMA_ARCH
 //USER CHANGE ARCHITECURE, HERE!
 //#define _SSE_ARCH
-#define _AVX_ARCH
-//#define _AVX512_ARCH
+//#define _AVX_ARCH
+#define MADD_ENABLE
+#define _AVX512_ARCH
 //#define _NEON_ARCH
 
 //#define _x86_PERFORMANCE
@@ -24,7 +25,6 @@
 #endif
 
 #ifdef _AVX_ARCH
-#define MADD_ENABLE
 #define _VU32_SIZE 8
 #define _VU32_ALGSIZE 32
 #define _VU32_LOG_ALGSIZE 5
@@ -41,6 +41,10 @@
 #define _VU32_SIZE 16
 #define _VU32_ALGSIZE 64
 #define _VU32_LOG_ALGSIZE 6
+
+#define _VF32_SIZE 16
+#define _VF32_ALGSIZE 64
+#define _VF32_LOG_ALGSIZE 6
 
 #include "VU32_avx512.h"
 #include "VF32_avx512.h"
